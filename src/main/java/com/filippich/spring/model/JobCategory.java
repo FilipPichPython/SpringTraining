@@ -1,16 +1,16 @@
 package com.filippich.spring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
-@RequiredArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class JobCategory
@@ -24,5 +24,5 @@ public class JobCategory
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "jobCategory", cascade = {
             CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH
     })
-    private Set<Contact> contacts = new HashSet<>();
+    private Set<Worker> workers = new HashSet<>();
 }

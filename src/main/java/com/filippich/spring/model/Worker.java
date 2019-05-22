@@ -1,5 +1,6 @@
 package com.filippich.spring.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -7,10 +8,10 @@ import lombok.RequiredArgsConstructor;
 import javax.persistence.*;
 
 @Data //gettery, settery i metody klasy Object
-@RequiredArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Contact
+public class Worker
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +22,7 @@ public class Contact
     private int age;
     private double height;
     private double weight;
-    private double slary;
+    private double salary;
 
     @ManyToOne(cascade = {
             CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH
