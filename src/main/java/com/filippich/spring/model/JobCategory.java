@@ -18,7 +18,6 @@ public class JobCategory
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
-    private int workedYears;
     private String jobTitle;
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "jobCategory", cascade = {

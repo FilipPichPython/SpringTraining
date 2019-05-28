@@ -20,8 +20,6 @@ public class Worker
     private String surname;
     private String tel;
     private int age;
-    private double height;
-    private double weight;
     private double salary;
 
     @ManyToOne(cascade = {
